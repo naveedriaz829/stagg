@@ -1,0 +1,22 @@
+<div [ngClass]="{'slide-out': isModalClosed}" class="modal">
+  <img src="assets/images/modal.jpg">
+  <div class="modal-header">
+    <svg
+    style="cursor: pointer;"
+      (click)="closeModal()"
+      class="menu-icon"
+      width="40"
+      height="30"
+      viewBox="0 0 40 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      >
+        <line class="line1" x1="5" y1="5" x2="35" y2="5" stroke="currentColor" stroke-width="2"/>
+        <line class="line2" x1="5" y1="13" x2="35" y2="13" stroke="currentColor" stroke-width="2"/>
+        <line class="line3" x1="5" y1="21" x2="35" y2="21" stroke="currentColor" stroke-width="2"/>
+    </svg>
+  </div>
+  <div class="modal-body">
+    <ng-content></ng-content>
+  </div>
+</div>

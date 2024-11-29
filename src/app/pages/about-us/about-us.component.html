@@ -1,0 +1,105 @@
+<section class="horizon-section" [style.minHeight.px]="containerWidth || 0">
+  <div #scrollHorizontallyRef class="scroll-horizontally" [ngClass]="!isSectionsFixed ? 'scroll-away': ''">
+    <div #container class="sections-container">
+      <div class="section section-1">
+        <div class="desc">
+          <div class="title">
+            <div class="line"></div>
+            <h3 fadeIn  [customOnly]="true" customClass="underline" >Our Mandate</h3>
+          </div>
+          <p class="caption delay-800" fadeIn customClass="slide-up-animation" [customOnly]="true">Lead, accelerate, and track the travel and tourism industry's transition to sustainable practices, while driving action to protect nature and support communities</p>
+        </div>
+        <div class="image-container" >
+          <img [src]="getImageSrc('assets/images/section-1.png')">
+          <!-- <img [src]="getImageSrc('assets/images/bg-main.jpg')"> -->
+
+        </div>
+      </div>
+      <div class="section section-2">
+        <div class="desc">
+          <div class="title">
+            <div class="line"></div>
+            <h3 fadeIn customClass="underline" [customOnly]="true" >Our Vision</h3>
+          </div>
+          <p class="caption delay-700" fadeIn customClass="slide-up-animation" [customOnly]="true" >To lead the tourism sector in becoming a force for sustainable development and effective in reducing environmental impact, while remaining profitable and sustainable as an industry</p>
+        </div>
+        <div class="image-container">
+          <img [src]="getImageSrc('assets/images/section2.jpg')">
+        </div>
+      </div>
+      <div class="section section-3">
+        <div class="desc">
+          <div class="title">
+            <div class="line"></div>
+            <h3  customClass=" slide-up-animation " [customOnly]="true"  fadeIn style="color:#FFF;">Our Mission</h3>
+          </div>
+          <p class="caption delay-700" fadeIn customClass="slide-up-animation" [customOnly]="true" style="color:#FFF;">Deliver applied & impact driven research, stakeholder centric services and end-to-end solutions, to enable the industry’s stakeholders to accelerate their transition and achieve the global and the industry sustainability goals</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="info-section">
+  <h1><span fadeIn customClass="slide-up-animation" [customOnly]="true" customClass="underline">Leading for the</span><span customClass="underline" fadeIn>Positive Impact</span></h1>
+  <div class="desc">
+    <p> 
+      <span   fadeIn customClass="slide-up-animation" [customOnly]="true" [ngClass]="{'slide-up-animation delay-1': !isSectionsFixed}">
+        The STGC is uniting the travel sector to protect nature and support communities. Our mission is to be the leading global center for sustainable Travel & Tourism, offering impact-driven research, stakeholder services, and solutions.
+      </span>
+      <br><br>
+      <span  fadeIn customClass="slide-up-animation" [customOnly]="true" [ngClass]="{'slide-up-animation delay-2': !isSectionsFixed}">
+        We bring together public and private sector leaders—countries, businesses, NGOs, and academia— to provide tools for micro, small, and medium businesses, travelers, and destinations to drive lasting change.
+      </span>
+      <br><br>
+      <span  fadeIn customClass="slide-up-animation" [customOnly]="true" [ngClass]="{'slide-up-animation  delay-3': !isSectionsFixed}">
+        To drive sustainable tourism, STGC is launching a Global Research Center for Climate, Nature & Communities. The Center will hire top researchers and collaborate with leading universities and organizations to provide actionable insights, tools, and solutions.
+      </span>
+    </p>
+  </div>
+</section>
+
+<section class="cards-section">
+  <div class="cards-container" [ngClass]="{'small-view' : isSmallScreenView}">
+    <div *ngFor="let card of cardsList; let index= index" class="card"  [style.order]="isMediumScreenView && card.type==='' && cardsList[index-1]?.type === '' ? index+4 : index" [ngClass]="{'hide': isSmallScreenView && card.type==='', 'small-card' :isSmallScreenView}">
+      <div  fadeIn customClass="slide-up-animation" [customOnly]="true" [ngSwitch]="card.type">
+        <div class="card-desc" *ngSwitchCase="'card'">
+          <h3>{{card.title}}</h3>
+          <p>{{card.caption}}</p>
+        </div>
+        <div class="card-img" *ngSwitchCase="'img'" fadeIn>
+          <img [src]="card.img">
+        </div>
+        <div class="card-empty" *ngSwitchDefault></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer footer-title">
+  <h2 customClass="underline slide-up-animation" [customOnly]="true" fadeIn><span customClass="underline" [customOnly]="true" fadeIn>Supporting a just transition</span><span customClass="underline" fadeIn [customOnly]="true">to sustainable tourism, a healthier</span><span customClass="underline" fadeIn [customOnly]="true">planet and thriving communities</span></h2>
+</section>
+
+<section #videoContainer class="video-container">
+  <video class="video-player" #videoPlayer (mouseover)="onMouseOver(videoPlayer)" autoplay muted playsinline preload="metadata" (click)="toggleVideo(videoPlayer)"  (mouseleave)="onMouseLeave(videoPlayer)">
+    <source src="assets/videos/bg-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<section class="footer" style="padding-top: 48px;">
+  <div class="footer-content">
+    <div class="nav">
+      <img [routerLink]="['/home']" (click)="navigateToTop()" src="assets/images/STGC-black.svg"  style="cursor: pointer;">
+      <div class="links">
+        <a [routerLink]="['/home']" (click)="navigateToTop()">Home</a>
+        <a [routerLink]="['/about']" (click)="navigateToTop()" style="white-space: nowrap;">About us</a>
+        <a [routerLink]="['/partnerships']" (click)="navigateToTop()">Partnerships</a>
+        <a [routerLink]="['/contact-us']" (click)="navigateToTop()" style="white-space: nowrap;">Contact us</a>
+      </div>
+    </div>
+    <div class="copy-write">
+      <p>© All rights reserved.Sustainable Tourism Global Center</p>
+      <a  href="assets/reports/Privacy_Policy.pdf" target="_blank">Privacy Policy</a>
+    </div>
+  </div>
+</section>

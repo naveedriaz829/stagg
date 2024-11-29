@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.text-white{
+  color: white;
+}
+a, p, h1,h2,h3,h4,h5,h6,span,div{
+  font-family: "Manrope", sans-serif;
+}
+body{
+  height: 100%;
+  max-height: 100vh;
+  margin: 0;
+}
+.underline{
+  position: relative;
+  display: block;
+  &::after
+{
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0.29em;
+    left: 50%;
+    min-width: 0vw;
+    height: 0.89px;
+    background-color: rgb(46, 164, 127, 20%);
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+
+    animation: line-width-increase 3s 0.7s ease-in-out forwards;
+    -webkit-animation: line-width-increase 3s 0.7s ease-in-out forwards;
+}
+  &.underline-white::after{
+    background-color: rgb(255, 255, 255, 10%);
+  }
+}
+
+.fade-in-up-animation{
+  opacity: 0;
+  animation: fade-in-up 0.9s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)  forwards;
+  -webkit-animation: fade-in-up 0.9s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)  forwards;
+  animation-fill-mode: forwards;
+}
+.transition-4{
+  opacity: 0;
+  z-index: 1;
+  transition: all 0.4s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: all 0.4s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: all 0.4s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -ms-transition: all 0.4s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: all 0.4s 0s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.transition-delay-4{
+  opacity: 0;
+  transition: all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -ms-transition: all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: all 0.4s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.display-out{
+  animation: fade-out 0.1s 0.4s forwards;
+  -webkit-animation: fade-out 0.1s 0.4s forwards;
+}
+.opacity-1{
+  opacity: 1 !important;
+}
+.fade-out-up-animation{
+  animation: fade-in-up 0.9s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)  forwards reverse !important;
+  -webkit-animation: fade-in-up 0.9s 0.3s cubic-bezier(0.215, 0.61, 0.355, 1)  forwards reverse !important;
+}
+@keyframes fade-out{
+  100%{
+    display: none;
+  }
+}
+@keyframes line-width-increase{
+  0%{
+    min-width: 0%;
+  }
+  100%{
+    min-width: 100%;
+  }
+}
+@keyframes fade-in-up{
+  0%{
+    opacity: 0 !important;
+  }
+  100%{
+    opacity: 1 !important;
+}
+}
+
+.underline-input{
+  position: relative;
+  &::before{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .line-progress{
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transition: all 0.3s 0s ease-in;
+    -webkit-transition: all 0.3s 0s ease-in;
+    -moz-transition: all 0.3s 0s ease-in;
+    -ms-transition: all 0.3s 0s ease-in;
+    -o-transition: all 0.3s 0s ease-in;
+  }
+  &:hover .line-progress{
+    width: 100%;
+  }
+  input, textarea{
+    width: 100%;
+  }
+  input:focus + .line-progress,  textarea:focus + .line-progress {
+    width: 100%;
+  }
+}
+
+.slide-up{
+  animation: slide-up 0.4s 0s ease-in-out;
+  -webkit-animation: slide-up 0.4s 0s ease-in-out;
+}
+
+@keyframes slide-up {
+  0%{
+    opacity: 0;
+    transform: translateY(20px);
+    -webkit-transform: translateY(20px);
+    -moz-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    -o-transform: translateY(20px);
+}
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+}
+}
+.zoom-in{
+  animation: zoom-in 1.2s 0s ease-in-out;
+  -webkit-animation: zoom-in 1.2s 0s ease-in-out;
+}
+
+@keyframes zoom-in {
+  0%{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+  100%{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+}
+.delay-200{
+  animation-delay: 0.2s;
+}
+.delay-700{
+  animation-delay: 0.7s;
+}
+.delay-800{
+  animation-delay: 0.8s;
+}
+.fill-image{
+  animation: fill-image 0.6s 0s ease-in;
+  -webkit-animation: fill-image 0.6s 0s ease-in;
+}
+
+@keyframes fill-image{
+  0%{
+    width: 0%
+  }
+  100%{
+    width: 100%;
+  }
+}
+// .bg-transparent{
+//   background-color: transparent !important;
+//   transition: unset;
+//   -webkit-transition: unset;
+//   -moz-transition: unset;
+//   -ms-transition: unset;
+//   -o-transition: unset;
+// }
+.bg-green{
+  background-color: #2EA47F !important;
+}
+button{
+  cursor: pointer;
+}
+
+.slide-up-animation{
+  opacity: 0;
+  display: block;
+  animation: slide-up-animation forwards 1s;
+  -webkit-animation: slide-up-animation forwards 1s;
+}
+
+@keyframes slide-up-animation{
+  0%{
+    opacity: 0;
+    transform: translateY(100px);
+    -webkit-transform: translateY(100px);
+    -moz-transform: translateY(100px);
+    -ms-transform: translateY(100px);
+    -o-transform: translateY(100px);
+}
+100%{
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+}
+}
+.hidden{
+  display: none;
+}
+.\!hidden{
+  display: none !important;
+}
+.container-lg{
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+input, textarea{
+  @media (max-width: 992px) {
+    font-size: 16px !important;
+  }
+}
+.scroll-horizontally{
+  transition: all 0.1s 0s linear;
+  -webkit-transition: all 0.1s 0s linear;
+  -moz-transition: all 0.1s 0s linear;
+  -ms-transition: all 0.1s 0s linear;
+  -o-transition: all 0.1s 0s linear;
+}
+.\!z-10{
+  z-index: 10 !important;
+}

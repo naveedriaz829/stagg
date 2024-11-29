@@ -1,0 +1,13 @@
+<div class="app">
+  <app-pre-loader *ngIf="showLoader"></app-pre-loader>
+  <app-navbar></app-navbar>
+  <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
+  <div *ngIf="cursor === 'circle' " class="circle-cursor" [ngStyle]="{'transform': 'translate('+cursorPositionX+'px, '+cursorPositionY+'px)'}"></div>
+  <svg class="video-cursor" *ngIf="cursor === 'video' " [ngStyle]="{'transform': 'translate('+cursorPositionX+'px, '+cursorPositionY+'px)'}" width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0.5" y="0.5" width="149" height="149" rx="74.5" stroke="white"/>
+    <path d="M63.5 60.2144L86.5 75.0001L63.5 89.7858V60.2144Z" fill="white"/>
+  </svg>
+</div>
+<app-toaster *ngIf="tosterData" [tosterData]="tosterData"></app-toaster>

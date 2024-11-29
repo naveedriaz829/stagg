@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "public": true,
+  "name": "stgc",
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "dist/stgc/browser/**"
+    }
+  },
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ]
+}

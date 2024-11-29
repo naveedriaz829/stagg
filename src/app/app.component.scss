@@ -1,0 +1,51 @@
+.circle-cursor{
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    top: -7px;
+    left: -8.5px;
+    background-color: #2EA47F;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 99999999;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transition: transform 0.05s;
+    -webkit-transition: transform 0.05s;
+    -moz-transition: transform 0.05s;
+    -ms-transition: transform 0.05s;
+    -o-transition: transform 0.05s;
+    cursor: none;
+  }
+}
+
+
+
+.video-cursor{
+  display: block;
+  position: fixed;
+  z-index: 99999;
+  top: -75px;
+  left: -75px;
+  pointer-events: none;
+  transition: transform 0.05s;
+  -webkit-transition: transform 0.05s;
+  -moz-transition: transform 0.05s;
+  -ms-transition: transform 0.05s;
+  -o-transition: transform 0.05s;
+}
+.app{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: 100vw;
+  margin: auto;
+  background-color: white;
+  overflow: hidden;
+}

@@ -1,0 +1,72 @@
+<nav class="nav-header" [ngClass]="{'hide-nav-top': scrollTopDir, 'black-header' : color === 'black', 'black-header-no-bg' : color === 'black-no-bg'}">
+  <div class="header {{isMenuOpened ? '' : customClass}}">
+    <div class="logo-container">
+      <span class="logo-text scroll-hide">Beta</span>
+      <img
+      (click)="navigateToTop()"
+      [routerLink]="['/home']"
+      class="logo"
+      style="transition: transform 0.3s ease;cursor: pointer; color: black;"
+      width="65" height="30" src="assets/images/STGC.svg">
+    </div>
+    <div (click)="toggleMenu()" class="menu-btn">
+      <svg
+      [ngClass]="{'active': toggleClicked}"
+      class="menu-icon"
+      width="40"
+      height="30"
+      viewBox="0 0 40 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      >
+        <line class="line1" x1="5" y1="5" x2="35" y2="5" stroke="currentColor" stroke-width="2"/>
+        <line class="line2" x1="5" y1="13" x2="35" y2="13" stroke="currentColor" stroke-width="2"/>
+        <line class="line3" x1="5" y1="21" x2="35" y2="21" stroke="currentColor" stroke-width="2"/>
+      </svg>
+    </div>
+  </div>
+</nav>
+<nav>
+  <div class="nav-content">
+    <div class="menu" [ngClass]="{'slide-out': hideFlag, 'hidden': !isMenuOpened}">
+      <!-- <img [src]="getImageSrc('assets/images/Menu.jpg')"> -->
+      <video 
+      autoplay 
+      loop 
+      muted 
+      playsinline 
+      style="
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        width: 100vw; 
+        height: 100vh; 
+        object-fit: cover; 
+        z-index: -1;"
+    >
+      <source src="assets/videos/new-bg.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    
+
+      <div class="links">
+        <a (click)="toggleMenu(true)" [routerLink]="['/home']" routerLinkActive="link-active" >
+          <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#AFE9D7"><path d="m600-200-57-56 184-184H80v-80h647L544-704l56-56 280 280-280 280Z"/></svg>
+          Home
+        </a>
+        <a (click)="toggleMenu(true)" [routerLink]="['/about']" routerLinkActive="link-active" >
+          <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#AFE9D7"><path d="m600-200-57-56 184-184H80v-80h647L544-704l56-56 280 280-280 280Z"/></svg>
+          About us
+        </a>
+        <a (click)="toggleMenu(true)" [routerLink]="['/partnerships']" routerLinkActive="link-active" >
+          <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#AFE9D7"><path d="m600-200-57-56 184-184H80v-80h647L544-704l56-56 280 280-280 280Z"/></svg>
+          Partnerships
+        </a>
+        <a (click)="toggleMenu(true)" [routerLink]="['/contact-us']" routerLinkActive="link-active" >
+          <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="60px" fill="#AFE9D7"><path d="m600-200-57-56 184-184H80v-80h647L544-704l56-56 280 280-280 280Z"/></svg>
+          Contact us
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,81 @@
+<section>
+  <div class="container">
+    <div class="contact-us">
+      <div class="line-1"></div>
+      <div class="line-2"></div>
+      <div class="social">
+
+
+
+        <h3 fadeIn [noScroll]="true">or contact us through</h3>
+        <p>
+          <span fadeIn [noScroll]="true" class="delay-700">info@stgc.global</span>
+          <br><br>
+          <span fadeIn [noScroll]="true" class="delay-700">
+            Sustainable Tourism Global Center
+          </span>
+          <br><br>
+          <span fadeIn [noScroll]="true" class="delay-700">
+            Riyadh <br><br>
+            Kingdom of Saudi Arabia
+          </span>
+        </p>
+      </div>
+      <div class="contact-form">
+        <h2 ><span fadeIn [noScroll]="true">Have a question?</span><br><span fadeIn [noScroll]="true">please get in touch</span></h2>
+        <form [formGroup]="contactForm" #contactFormRef>
+          <div class="input-container">
+            <div class="underline-input">
+              <input required [formControl]="getFromControl('name')" type="text" placeholder="Your Name">
+              <div class="line-progress"></div>
+            </div>
+            <div class="underline-input">
+              <input required email [formControl]="getFromControl('email')" type="email" placeholder="Your Email Address">
+              <div class="line-progress"></div>
+            </div>
+            <div class="underline-input">
+              <textarea required rows="10" [formControl]="getFromControl('message')" name="message" placeholder="Message"></textarea>
+              <div class="line-progress"></div>
+            </div>
+          </div>
+          <button #button [ngClass]="{'full-width-animation': isScrolledTo(button)}" class="confirm-button" type="button" (click)="submit()">
+            <span class="top-border"></span>
+            <span class="bottom-border"></span>
+            <span class="line-top-1 line-top"></span>
+            <span class="line-top-2 line-top"></span>
+            <span class="line-top-3 line-top"></span>
+            <span class="line-bottom-1 line-bottom"></span>
+            <span class="line-bottom-2 line-bottom"></span>
+            <span class="line-bottom-3 line-bottom"></span>
+            <div class="borders title">
+              <div class="animate">
+                <span class="animate-slide">Contact us</span>
+              </div>
+            </div>
+            <div class="borders icon">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13L13 1M13 1V9.66667M13 1H3.66667" stroke="white"/>
+              </svg>
+            </div>
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-content">
+      <div class="nav">
+        <img src="assets/images/STGC.svg" (click)="navigateToTop()" [routerLink]="['/home']" style="cursor: pointer;">
+        <div class="links">
+          <a [routerLink]="['/home']" (click)="navigateToTop()">Home</a>
+          <a [routerLink]="['/about']" (click)="navigateToTop()" style="white-space: nowrap;">About us</a>
+          <a [routerLink]="['/partnerships']"  (click)="navigateToTop()">Partnerships</a>
+          <a [routerLink]="['/contact-us']" (click)="navigateToTop()"  style="white-space: nowrap;">Contact us</a>
+        </div>
+      </div>
+      <div class="copy-write">
+        <p>© All rights reserved.Sustainable Tourism Global Center</p>
+        <a  href="assets/reports/Privacy_Policy.pdf" target="_blank">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+</section>
